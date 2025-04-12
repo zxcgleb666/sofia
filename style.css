@@ -1,0 +1,215 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif; /* Новый шрифт */
+}
+
+body {
+    background: #fff5f8; /* Нежно-розовый фон */
+    color: #4a4a4a;
+    line-height: 1.7;
+}
+
+/* Подключим красивый шрифт через Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=Playfair+Display:wght@600&display=swap');
+
+header {
+    background: linear-gradient(135deg, #ff8fab 0%, #ffc2d1 100%);
+    color: white;
+    padding: 3rem 2rem;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(255, 143, 171, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Декоративные круги в шапке */
+header::before {
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    top: -50px;
+    left: -50px;
+}
+
+header::after {
+    content: "";
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+    bottom: -30px;
+    right: -30px;
+}
+
+/* Главная страница */
+.main-content {
+    text-align: center;
+    padding: 40px 20px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    margin: 2rem auto;
+    max-width: 800px;
+}
+
+.profile-photo {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 30px;
+    border: 8px solid white;
+    box-shadow: 0 15px 30px rgba(255,143,171,0.2);
+}
+
+.info {
+    margin: 25px 0;
+    font-size: 1.1rem;
+}
+
+.info p {
+    margin: 15px 0;
+    padding: 12px 0;
+    border-bottom: 2px dashed #ff8fab;
+    display: inline-block;
+}
+
+/* Кнопки-ссылки */
+.links {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.btn {
+    padding: 15px 40px;
+    background: #ff8fab;
+    color: white !important;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: all 0.3s;
+    font-weight: 500;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: 0.5s;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+/* Страница достижений */
+.achievements {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.achievement-photo {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 15px;
+    margin: 0 auto 30px;
+    display: block;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.achievements-list {
+    list-style: none;
+    padding: 0;
+}
+
+.achievements-list li {
+    padding: 20px;
+    margin: 15px 0;
+    background: #fff9fb;
+    border-radius: 12px;
+    font-family: 'Playfair Display', serif; /* Красивый шрифт */
+    font-size: 1.2rem;
+    color: #6b4d57;
+    position: relative;
+    transition: transform 0.3s;
+}
+
+.achievements-list li:hover {
+    transform: translateX(10px);
+}
+
+.achievements-list li::before {
+    content: "★";
+    color: #ff8fab;
+    margin-right: 15px;
+    font-size: 1.4rem;
+}
+
+/* Страница галереи */
+.gallery {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.gallery-image {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 20px;
+    margin: 0 auto 25px;
+    display: block;
+    border: 3px solid white;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.caption {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: #6b4d57;
+    margin: 20px 0;
+    padding: 15px;
+    background: #fff9fb;
+    border-radius: 10px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .main-content {
+        padding: 30px 15px;
+    }
+    
+    .profile-photo {
+        width: 220px;
+        height: 220px;
+    }
+    
+    .links {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+}
